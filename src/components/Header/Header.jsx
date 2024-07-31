@@ -22,7 +22,7 @@ const Header = () => {
         </Link>
         
         <NavLink className="topbarButtonLink" to="join_partnership">
-          <button className="topbarButton d-none d-sm-block"> EXPRESS INTEREST</button>
+          <button className="topbarButton d-none d-sm-block"> JOIN THE PROJECT</button>
         </NavLink>
       </div>
 

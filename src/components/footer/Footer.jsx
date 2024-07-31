@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="container-fluid">
       <div className="container">
         <div className="myFooter">
-          <div className="footerCol">
+          <div className="footerCol logoCol">
             <img
               src={logo}
               height="160"

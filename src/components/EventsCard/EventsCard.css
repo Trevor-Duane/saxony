@@ -1,44 +1,65 @@
-.eventsPageTitle h6 {
-  margin-top: 2rem;
-  color: #1e8e2c;
-}
-.eventsWrapper {
-  display: grid;
-  /* background-color: #e2f0e2; */
-  grid-template-columns: minmax(1fr, 300px); /* Two columns of equal width */
-  gap: 1rem; /* Gap between grid items */
+.eventsCard {
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   width: 100%;
-  padding: 1rem; /* Padding around the container */
-  box-sizing: border-box;
-}
-.eventContainer {
-  /* background-color: #f0f0f0; */
-  /* background-color: #e2f0e2;    */
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px; 
-  /* padding: 2rem; */
-  background-color: yellow;
-  box-sizing: border-box;
+  /* height: fit-content; */
+  min-height: 250px;
   display: flex;
-  /* flex-direction: column; */
-  height: fit-content;
+  flex-direction: column;
+  box-sizing: border-box;
 }
-.left{
-    width: 100%;
-    background-color: red;
-    height: auto;
-    /* max-height: 200px; */
-    flex: 1 ;
+.eventsCard:hover{
+  outline: 1px solid #6b9671;
+  background-color: #f1f6f1;
+  transition: .5s;
 }
-.left img {
-    max-width: 100%;
-    height: auto;   
-    display: block;
-    flex: 1;
-  }
-.middle{
-    /* background-color: #262826; */
-    background-color: #1e8e2c;
-    flex: 1;
+.eventCardTop{
+  padding: 12px;
+  flex: 1;
+}
+.eventCardTop hr{
+  color: #ccdccc;
+}
+.eventTitle h6{
+  color: #1e8e2c  ;
+}
+.eventBody{
+  text-align: justify;
+  font-size: .8rem !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 5 ; /* Limits to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* /////////////////cardbottom styles//////////////////////////// */
+.eventCardBottom{
+  display: flex;
+  padding: 1rem 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.eventSlang{
+  background-color: #e2f0e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+
+}
+.eventSlang p{
+  display: inline-block;
+  color: #1e8e2c;
+  margin: auto;
+  font-size: .8rem;
+  padding: 6px;
+}
+
+.eventDate span{
+  font-size: 0.8rem;
+  color: #999b99;
+  padding-left: 6px;
 }
 
 
@@ -47,54 +68,3 @@
 
 
 
-
-
-
-
-
-
-
-/* .eventCardTitle {
-    border-bottom: 2px solid #1e8e2c;
-  }
-  .eventCardTitle h6 {
-    font-weight: 600;
-    color: #433f3f;
-    font-size: 14px;
-  }
-  .eventDayTime {
-    display: flex;
-    font-size: 12px;
-    padding: 0rem 0rem 0.3rem 0rem;
-    align-items: center;
-    column-gap: 6px;
-  }
-  .eventDayTime {
-    display: flex;
-    align-items: center;
-    column-gap: 4px;
-  }
-  .eventCardText {
-    padding: 0rem 0rem;
-  }
-  .eventCardText p {
-    font-size: 14px;
-  }
-  .eventCategory {
-    padding: 0.5rem 0rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  .eventCategory span {
-    background-color: #e5e5e5;
-    font-size: 12px;
-    padding: 5px 8px;
-    border-left: 2px solid #1e8e2c;
-  }
-  .eventCategory button {
-    background-color: #1e8e2c;
-    color: #fff;
-    border: none;
-    font-size: 12px;
-    padding: 5px 8px;
-  } */

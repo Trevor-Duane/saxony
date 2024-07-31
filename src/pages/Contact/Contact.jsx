@@ -3,27 +3,32 @@ import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import "animate.css";
 import { IoMdPin, IoMdText } from "react-icons/io";
-import {
-  FaAngleDown,
-  FaDivide,
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaUser,
-} from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 import Swal from "sweetalert2";
-import maps from "../../assets/google-maps.png";
+import axios from "axios";
 import { FaPhone } from "react-icons/fa";
-// import ContactForm from "../components/header/ContactForm";
-// import TextInput from "../components/header/TextInput";
-// import Footer from "../components/Footer";
-// import Button from "react-bootstrap/Button";
-// import Col from "react-bootstrap/Col";
-// import Form from "react-bootstrap/Form";
-// import Row from "react-bootstrap/Row";
+import CustomSlider from "../../components/Slider/CustomSlider";
+import CoordinatorCard from "../../components/CoordinatorCard/CoordinatorCard";
 
 const Contact = () => {
   const form = useRef();
+
+  const [coordinators, setCoordinators] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchCoordinators = async () => {
+      try {
+        const response = await axios.get(
+          "https://uganda-saxonypartnership.org/cms/wp-json/acf/v3/coordinators"
+        );
+        console.log("schools", response.data)
+        setCoordinators(response.data);
+      } catch (err) {
+        console.log(err.message)
+      }
+    };
+    fetchCoordinators();
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -78,7 +83,17 @@ const Contact = () => {
   };
   return (
     <>
-      <section className="google-map"></section>
+      <CustomSlider />
+      <section className="container-fluid coordinators-wrapper">
+        <div className="coordinators-title container gx-0">
+          <p>Meet the Coordinating team, Uganda</p>
+        </div>
+        <div className="coordinators container gx-0">
+          {coordinators.map((coordinator, index) =>(
+            <CoordinatorCard key={coordinator.id} coordinator={coordinator}/>
+          ))}
+        </div>
+      </section>
 
       <section className="contactHero container-fluid">
         <div className="contactWrapper container">
@@ -105,7 +120,6 @@ const Contact = () => {
 
             <div className="contactDetailsCol col">
               <div className="detailsCol">
-
                 <div>
                   <IoMdPin size={22} color="#1E8E2C" />
                 </div>
@@ -117,7 +131,6 @@ const Contact = () => {
                   </p>
                 </div>
 
-            
                 <div>
                   <h6 className="sectionSubHeader">Coordination Office</h6>
                   <p className="contactParaText">
@@ -125,7 +138,6 @@ const Contact = () => {
                     Kikandwa, Rubaga
                   </p>
                 </div>
-
               </div>
             </div>
 
@@ -146,7 +158,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="chevWrapper">
+          <div className="chevWrapper d-none d-sm-block">
             <FaAngleDown size={22} color="#433F3F" />
           </div>
         </div>
@@ -154,7 +166,6 @@ const Contact = () => {
 
       <section className="formSection container-fluid">
         <div className="container contactForm">
-
           <form ref={form} onSubmit={sendEmail} className="userContactForm">
             <h6 className="sectionHeader">Write to us</h6>
             <div className="row mb-4">
@@ -228,6 +239,8 @@ const Contact = () => {
           </form>
         </div>
       </section>
+
+      <section className="google-map"></section>
     </>
   );
 };

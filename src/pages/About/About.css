@@ -1,3 +1,4 @@
+
 .aboutUsSectionTextWrapper {
   display: flex;
   gap: 2rem;
@@ -18,10 +19,35 @@
   padding: 0.5rem;
 }
 .aboutUsSectionTextOther {
-  padding: 0rem 0rem 0rem 0rem;
+  padding: 0rem 0rem 2rem 0rem;
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
 }
+.referrer-link a{
+  text-decoration: none;
+  color: #1e8e2c;
+  position: relative;
+  font-size: .8rem;
+  transition: color 0.3s ease;  
 
+}
+.referrer-link a::after {
+  content: '';             
+  position: absolute;      
+  left: 0;                 
+  right: 100%;             
+  bottom: 0;               
+  border-bottom: 1px solid #1e8e2c; 
+  transition: right 0.5s ease-in-out;
+}
+.referrer-link a:hover{
+  color: #1e8e2c;
+}
+.referrer-link a:hover::after {
+  right: 0;                
+}
 .memberSubSection {
   display: flex;
   gap: 10px;
@@ -62,4 +88,19 @@ th {
 
 tr:nth-child(even) {
   background-color: #faf9f6;
+}
+
+@media all and (max-width: 39.8em) {
+  .aboutUsSectionTextWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .aboutUsSectionTextOther {
+    padding: 0rem 1rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

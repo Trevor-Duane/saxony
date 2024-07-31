@@ -1,29 +1,33 @@
 import React from "react";
 import { RiExternalLinkFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import "./About.css";
 import CustomSlider from "../../components/Slider/CustomSlider";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const About = () => {
   return (
     <>
-      <CustomSlider/>  
-      <section className="aboutUsContent container-fluid">
-        <div className="container">
+      <CustomSlider />
+      <section className="aboutUsContent container-fluid gx-0">
+        <div className="container gx-0">
           <div className="aboutUsSectionTextWrapper">
             <div className="aboutUsSectionText">
               <h6 className="sectionHeader">Partnership Project Background</h6>
               <p className="sectionParaText">
-                The Uganda-Saxony Partnership is a project funded by the Free
-                State of Saxony, through the Entwicklungspolitisches Netzwerk
-                Sachsen, ENS e.V. (Development Policy Network Saxony) The
-                partnership project seeks to strengthen cooperation of actors in
-                Uganda and Saxony that work in different areas of sustainable
-                development including Civil Society Organisations (CSOs),
-                schools, cultural institutions, social institutions, sciences,
-                business sector and municipalities interested in social and
-                sustainable development. The project directly contributes to the
-                implementation of SDG 17: “Partnerships to achieve the
-                Sustainable Development Goals"
+                The Uganda-Saxony Partnership project aims at fostering and
+                promoting partnerships between organizations and schools in
+                Uganda and organizations and schools in the Free State of
+                Saxony. The project is coordinated by Katosi Women Development
+                Trust and The Development Policy Network
+                (Entwicklungspolitisches Netzwerk Sachsen e.V, The ENS.)
+              </p>
+              <p className="sectionParaText">
+                Together, we aim to build and support existing partnerships
+                between schools and Civil Society Organisations working in
+                different areas of interventions such as; WASH, Health, Gender
+                and women empowerment, Youth skilling, environment, culture,
+                art, etc
               </p>
             </div>
           </div>
@@ -58,32 +62,45 @@ const About = () => {
           </div>
 
           <div className="aboutUsSectionTextWrapper">
+            <div className="aboutUsSectionTextOther">
+             <div>
+             <div className="memberSubSection">
+                <p className="sectionParaText">
+                  Katosi Women Development Trust(KWDT)
+                </p>
+              </div>
+              <div>
+                <p className="sectionParaText">
+                  Katosi Women Development Trust (KWDT) is registered non profit
+                  organisation aiming to improve living standards of poor &
+                  rural  fisher communities in Uganda by empowering them to
+                  engage in their development processes. KWDT has been working
+                  with rural and fisher women for over 25 years and has been
+                  instrumental in creating change in the lives of the rural &
+                  fisher women and their communities.
+                </p>
 
-          <div className="aboutUsSectionTextOther">
-              <div className="memberSubSection">
-                <p className="sectionParaText">Katosi Women Development Trust(KWDT)</p>
+                <p className="sectionParaText">
+                  KWDT works closely with ENS in Germany as the coordination
+                  partner in Germany
+                </p>
+              </div>
+             </div>
+              <div className="referrer-link">
                 <a href="https://katosi.org/" target="_blank" rel="noreferrer">
-                  <RiExternalLinkFill size={24} color="#1e8e2c" />
+                  Visit KWDT Website <MdOutlineKeyboardDoubleArrowRight/>
                 </a>
               </div>
-              <p className="sectionParaText">
-                Katosi Women Development Trust (KWDT) is a registered non profit
-                organisation aiming to improve living standards of poor & rural
-                 fisher communities in Uganda by empowering them to engage in
-                their development processes. KWDT has been working with rural
-                and fisher women for over 25 years and has been instrumental in
-                creating change in the lives of the rural & fisher women and
-                their communities.
-              </p>
             </div>
-            
+
             <div className="aboutUsSectionTextOther">
+              <div>
               <div className="memberSubSection">
-                <p className="sectionParaText">The Development Policy Network Saxony(ENS)</p>
-                <a href="https://www.einewelt-sachsen.de/en/ens-homepage/" target="_blank" rel="noreferrer">
-                  <RiExternalLinkFill size={24} color="#1e8e2c" />
-                  </a>
-              </div>  
+                <p className="sectionParaText">
+                  The Development Policy Network Saxony(ENS)
+                </p>
+              </div>
+              <div>
               <p className="sectionParaText">
                 The Development Policy Network Saxony (ENS), founded in 1995, is
                 an association of more than 60 Saxon associations and
@@ -99,16 +116,25 @@ const About = () => {
                 organisation of exhibitions as well as specialist and
                 educational publications. The primary purpose of the ENS is to
                 promote international understanding between developing countries
-                and Germany with a focus on the Free State of Saxony. This
-                results in many domestic activities, which are described below
-                for the sake of completeness. In addition, the ENS also
-                represents the interests of non-governmental organisations
-                (NGOs) that are exclusively dedicated to development projects in
-                countries of the Global South
+                and Germany with a focus on the Free State of Saxony. In
+                addition, the ENS also represents the interests of
+                non-governmental organisations (NGOs) that are exclusively
+                dedicated to development projects in countries of the Global
+                South
               </p>
-            </div>
+              </div>
+              </div>
 
-            
+              <div className="referrer-link">
+                <a
+                  href="https://www.einewelt-sachsen.de/en/ens-homepage/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit ENS website <MdOutlineKeyboardDoubleArrowRight/>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -123,7 +149,7 @@ const About = () => {
             <tr>
               <th>Main Group</th>
               <th>Subgroups</th>
-              <th>Details</th>
+              {/* <th>Details</th>   */}
             </tr>
             <tr>
               <td>Civil Society Organisations</td>
@@ -133,7 +159,7 @@ const About = () => {
                   <li>Community Based Organisations</li>
                 </ul>
               </td>
-              <td>NGOs & CBOs</td>
+              {/* <td>NGOs & CBOs</td> */}
             </tr>
             <tr>
               <td>Schools</td>
@@ -144,7 +170,7 @@ const About = () => {
                   <li>Vocational Institutes</li>
                 </ul>
               </td>
-              <td></td>
+              {/* <td></td> */}
             </tr>
             <tr>
               <td>Others</td>
@@ -156,7 +182,7 @@ const About = () => {
                   <li>Municipalities</li>
                 </ul>
               </td>
-              <td>All other interested in social and sustainable development</td>
+              {/* <td>All other interested in social and sustainable development</td> */}
             </tr>
           </table>
         </div>

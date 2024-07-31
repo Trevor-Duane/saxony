@@ -3,7 +3,6 @@ import { AiFillHome } from "react-icons/ai";
 export const menuItems = [
     {
         id: 1,
-        // title: <AiFillHome size={18} color="#fff"/>,
         title: "HOME",
         url:"/"
     },
@@ -14,8 +13,21 @@ export const menuItems = [
     },
     {
         id: 3,
-        title: "JOIN THE PROJECT",
-        url:"/join_partnership"
+        title: "PARTNERSHIPS",
+        url:"",
+        submenu: [
+            {
+                id: 1,
+                title: "SCHOOLS",
+                url: "/partner_schools"
+            },
+            {
+                id: 2,
+                title: "CSOs",
+                url: "/partner_cso"
+            },
+
+        ],
     },
     {
         id: 4,
@@ -25,27 +37,23 @@ export const menuItems = [
     {
         id: 5,
         title: "RESOURCE CENTER",
-        url:"/resources",
+        url:"",
         submenu: [
             {
-                id: 7,
-                title: "About Uganda",
+                id: 1,
+                title: "INFORMATION ON UGANDA",
                 url: "/uganda_information"
             },
             {
-                id: 8,
-                title: "Ugandan Schools",
-                url: "/schools_system_uganda"
+                id: 2,
+                title: "INFORMATION ON SAXONY",
+                url: "/saxony_information"
             },
-            {
-                id: 9,
-                title: "Workshops",
-                url: "/workshops"
-            },
+
         ],
     },
     {
-        id: 10,
+        id: 6,
         title: "CONTACT US",
         url:"/contact"
     },
